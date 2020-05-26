@@ -1,0 +1,20 @@
+extends ../index
+
+block content
+  h1 
+    
+    span.mr-3 Users
+  .d-flex.align-items-center
+    form.ml-auto(action="/customers/search", method="GET")
+        input(type="text", name="q")
+        button Search
+  table.table
+    tr
+        th Name
+        th email
+        th phone
+    each customer in customers
+      tr
+        td= customer.name
+        td= customer.email
+        td= customer.phone

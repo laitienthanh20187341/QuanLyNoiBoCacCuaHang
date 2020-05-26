@@ -1,0 +1,36 @@
+extends ../index
+
+block content
+  h1 
+    
+    span.mr-3 Users
+    a.btn.btn-primary(href="/users/create") New
+  .d-flex.align-items-center
+    form.ml-auto(action="/users/search", method="GET")
+        input(type="text", name="q")
+        button Search
+  table.table
+    tr
+        th Name
+        th Username
+        th Gender
+        th Phone
+        th Address
+        th Date In
+        th
+    each user in users
+      tr
+        td
+          a(href=('/users/changepassword/'+user.id))= user.name
+        td= user.username
+        td= user.gender
+        td= user.phone
+        td= user.address
+        td= user.datein
+        td
+            a.btn.btn-xs.btn-info(href='/users/'+user.id+'/edit')
+              i.fa.fa-edit
+              | Edit
+            a.btn.btn-xs.btn-danger(href='/users/'+user.id+'/delete')
+              i.fa.fa-times
+              | Delete

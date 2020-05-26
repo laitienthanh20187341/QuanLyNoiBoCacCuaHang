@@ -1,0 +1,25 @@
+extends ../index
+
+block content
+  h1 
+    
+    span.mr-3 Product
+    a.btn.btn-primary(href="/product/create") New
+  .d-flex.align-items-center
+    form.ml-auto(action="/product/search", method="GET")
+        input(type="text", name="q")
+        button Search
+  table.table
+    tr
+        th Customer Name
+        th Order Date
+        th Store Name
+        th Total
+        th
+    each cart in carts
+      tr
+        td 
+            a(href="/cart/show/"+cart.id)= cart.name
+        td= cart.orderDate
+        td= cart.storeName
+        td= cart.total

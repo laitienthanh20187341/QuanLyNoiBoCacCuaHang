@@ -1,0 +1,80 @@
+html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='')
+  meta(name='author' content='')
+  title Ocean Gate Admin
+  link(href='/vendor/fontawesome-free/css/all.min.css' rel='stylesheet' type='text/css')
+  link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+  link(href='/vendor/datatables/dataTables.bootstrap4.css' rel='stylesheet')
+  link(href='/css/sb-admin.css' rel='stylesheet')
+  script(language='javascript' src='/js/ckeditor/ckeditor.js' type='text/javascript')
+  script(language='javascript' src='/js/jquery-2.1.1.min.js' type='text/javascript')
+nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top
+  a.navbar-brand.mr-1(href='index.php') Ocean Gate Admin
+  button#sidebarToggle.btn.btn-link.btn-sm.text-white.order-1.order-sm-0(href='#')
+    i.fas.fa-bars
+  ul.navbar-nav.ml-auto.ml-md-0
+    li.nav-item.dropdown.no-arrow.mx-1
+      a#alertsDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+        i.fas.fa-bell.fa-fw
+      .dropdown-menu.dropdown-menu-right(aria-labelledby='alertsDropdown')
+        a.dropdown-item(href='#') Action
+        a.dropdown-item(href='#') Another action
+        .dropdown-divider
+        a.dropdown-item(href='#') Something else here
+    li.nav-item.dropdown.no-arrow.mx-1
+      a#messagesDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+        i.fas.fa-envelope.fa-fw
+      .dropdown-menu.dropdown-menu-right(aria-labelledby='messagesDropdown')
+        a.dropdown-item(href='#') Action
+        a.dropdown-item(href='#') Another action
+        .dropdown-divider
+        a.dropdown-item(href='#') Something else here
+    li.nav-item.dropdown.no-arrow
+      a#userDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') 
+        i.fas.fa-user-circle.fa-fw 
+      .dropdown-menu.dropdown-menu-right(aria-labelledby='userDropdown')
+        a.dropdown-item(href='#') Login
+        a.dropdown-item(href='#') Activity Log
+        .dropdown-divider
+        a.dropdown-item(href='/auth/logout') Logout
+#wrapper
+  ul.sidebar.navbar-nav
+    li.nav-item.dropdown
+      a#pagesDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+        i.fas.fa-fw.fa-folder
+        span Pages
+      .dropdown-menu(aria-labelledby='pagesDropdown')
+            h6.dropdown-header Login Screens:
+            a.dropdown-item(href='/product') Product
+            a.dropdown-item(href='/store') Store
+            a.dropdown-item(href='/cart/show') Cart
+            a.dropdown-item(href='/users') Users
+    li.nav-item
+      a.nav-link(href='#')
+        i.fas.fa-fw.fa-table
+        span Type
+  #content-wrapper
+    .container-fluid
+      block content
+  a.scroll-to-top.rounded(href='#page-top')
+    i.fas.fa-angle-up
+  #logoutModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          h5#exampleModalLabel.modal-title Ready to Leave?
+          button.close(type='button' data-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true') &times;
+        .modal-body Select &quot;Logout&quot; below if you are ready to end your current session.
+        .modal-footer
+          button.btn.btn-secondary(type='button' data-dismiss='modal') Cancel
+          a.btn.btn-primary(href='logout.php') Logout
+  script(src='/vendor/jquery/jquery.min.js')
+  script(src='/vendor/bootstrap/js/bootstrap.bundle.min.js')
+  script(src='/vendor/jquery-easing/jquery.easing.min.js')
+  script(src='/js/sb-admin.min.js')
+

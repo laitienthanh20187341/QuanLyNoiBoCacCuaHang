@@ -1,0 +1,38 @@
+extends ../index
+
+block content
+    h1 Update user
+
+    if errors
+        each error in errors
+            .alert.alert-danger= error
+
+    form(action="", method="POST")
+        .form-group
+            label(for="username") Username
+            input#username.form-control(type="text", name="username", value=users ? users[0].username : "")
+        .form-group
+            label(for="name") Name
+            input#name.form-control(type="text", name="name", value=users ? users[0].name : '')
+        .form-group
+            label(for="phone") Phone
+            input#phone.form-control(type="number", name="phone", value=users ? users[0].phone : '')        
+        .form-group
+            label(for="gender") Gender
+            select#gender.form-control(name="gender")
+                option(value="male") Male
+                option(value="female") Female
+        .form-group
+            label(for="address") Address
+            input#address.form-control(type="text", name="address", value=users ? users[0].address : '')
+        .form-group
+            label(for="datein") Date in
+            input#datein.form-control(type="date", name="datein", value=users ? users[0].datein : '')      
+        //- .form-group
+        //-     label(for="storeId") Name Store
+        //-     select#storeId.form-control(name="storeId")
+        //-         each store in stores
+        //-             option(value=store.storeId)= store.storeName
+                                 
+
+        button(class="btn btn-primary") Update

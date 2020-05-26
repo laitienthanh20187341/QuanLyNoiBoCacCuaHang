@@ -1,0 +1,44 @@
+extends ../index
+
+block content
+    h1 Create user
+
+    if errors
+        each error in errors
+            .alert.alert-danger= error
+
+    form(action="", method="POST")
+        .form-group
+            label(for="username") Username
+            input#username.form-control(type="text", name="username", value=values ? values.username : '')
+        .form-group
+            label(for="password") Password
+            input#password.form-control(type="password", name="password", value=values ? values.password : '')
+        .form-group
+            label(for="name") Name
+            input#name.form-control(type="text", name="name", value=values ? values.name : '')
+        .form-group
+            label(for="phone") Phone
+            input#phone.form-control(type="number", name="phone", value=values ? values.phone : '')        
+        .form-group
+            label(for="gender") Gender
+            select#gender.form-control(name="gender")
+                option(value="male") Male
+                option(value="female") Female
+        .form-group
+            label(for="dateofbirth") Date of birth
+            input#dateofbirth.form-control(type="date", name="dateofbirth", value=values ? values.dateofbirth : '')
+        .form-group
+            label(for="address") Address
+            input#address.form-control(type="text", name="address", value=values ? values.address : '')
+        .form-group
+            label(for="datein") Date in
+            input#datein.form-control(type="date", name="datein", value=values ? values.datein : '')      
+        .form-group
+            label(for="storeId") Name Store
+            select#storeId.form-control(name="storeId")
+                each store in stores
+                    option(value=store.storeId)= store.storeName
+                                 
+
+        button(class="btn btn-primary") Create

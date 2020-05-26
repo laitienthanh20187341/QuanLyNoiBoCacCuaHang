@@ -1,0 +1,18 @@
+extends ../index
+
+block content
+  h1 
+    
+    span.mr-3 Product
+  .d-flex.align-items-center
+    form.ml-auto(action="/product/search", method="GET")
+        input(type="text", name="q")
+        button Search
+  table.table
+    tr
+        th Product Name
+        th Quantity
+    each cart in carts
+      tr
+        td= cart.name
+        td= cart.quantity
