@@ -1,0 +1,21 @@
+extends ../index
+
+block content
+    h1 Update user
+
+    if errors
+        each error in errors
+            .alert.alert-danger= error
+
+    form(action="", method="POST")
+        .form-group
+            label(for="storeName") Store name
+            input#storeName.form-control(type="text", name="storeName", value=stores ? stores[0].storeName : "")
+        .form-group
+            label(for="storeAddress") Store Address
+            input#storeAddress.form-control(type="text", name="storeAddress", value=stores ? stores[0].storeAddress : "")
+        .form-group
+            label(for="dateCreate") Date Create
+            input#dateCreate.form-control(type="date", name="dateCreate", value=stores ? stores[0].dateCreate : "")        
+
+        button(class="btn btn-primary") update
