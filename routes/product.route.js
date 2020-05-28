@@ -1,6 +1,6 @@
 var express = require('express');
-var router = express.Router();
-var multer = require('multer');
+var router = express.Router()
+var multer = require('multer')
 
 var upload = multer({dest: './public/uploads/'})
 var controller = require('../controller/product.controller');
