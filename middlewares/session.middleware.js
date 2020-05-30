@@ -1,4 +1,4 @@
-var shortid = require('shortid');
+var shortid = require('shortid')
 
 module.exports = function(req, res, next) {
     if(!req.signedCookies.sessionId) {
