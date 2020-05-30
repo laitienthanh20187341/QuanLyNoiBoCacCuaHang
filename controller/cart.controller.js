@@ -1,5 +1,5 @@
 var con = require('../mysql-connection');
-var Cart = require('../models/cart');
+var Cart = require('../models/cart')
 
 module.exports.cart = function(req,res) {
     con.query('SELECT * FROM products', function(err,result){
