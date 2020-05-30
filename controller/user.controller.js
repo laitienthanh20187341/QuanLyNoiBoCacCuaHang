@@ -1,6 +1,6 @@
 var con = require('../mysql-connection');
 var md5 = require('md5');
-const shortid = require('shortid');
+const shortid = require('shortid')
 
 module.exports.index = function (req, res) {
     con.query('SELECT * FROM users', function (err, results) { // retrieve data 
