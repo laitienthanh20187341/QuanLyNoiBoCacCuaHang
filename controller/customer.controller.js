@@ -1,5 +1,5 @@
 var con = require('../mysql-connection');
-var md5 = require('md5');
+var md5 = require('md5')
 
 module.exports.get_register = function(req,res){
     con.query('SELECT * FROM stores', function(err,result){
