@@ -1,4 +1,4 @@
-var con = require('../mysql-connection')
+var con = require('../mysql-connection');
 
 module.exports.index = function(req,res){
     con.query('SELECT * FROM stores', function(err, results) {
