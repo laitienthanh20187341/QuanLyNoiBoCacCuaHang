@@ -1,4 +1,4 @@
-var con = require('../mysql-connection')
+var con = require('../mysql-connection');
 var md5 = require('md5');
 
 module.exports.login = function(req, res, next) {
