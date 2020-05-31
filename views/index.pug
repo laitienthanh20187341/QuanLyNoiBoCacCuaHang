@@ -1,0 +1,29 @@
+extends layouts/common
+
+block content
+  h1 
+    span.mr-3 Dasbroad
+  .d-flex.align-items-center
+    form.ml-auto(action="/users/search", method="GET")
+        input(type="text", name="q")
+        button Search
+  .row
+    each product in products
+      .card(style='width: 16rem;')
+        img.card-img-top(src=product.picture, alt='Card image cap')
+        .card-body
+          h5.card-title= product.name
+          p.card-text= product.price
+          a.btn.btn-primary(href='/add/'+product.id) Add to cart  
+  nav(aria-label='Page navigation example')
+    ul.pagination.justify-content-center
+      li.page-item
+        a.page-link(href='#') Previous
+      li.page-item
+        a.page-link(href='#') 1
+      li.page-item
+        a.page-link(href='#') 2
+      li.page-item
+        a.page-link(href='#') 3
+      li.page-item
+        a.page-link(href='#') Next        
