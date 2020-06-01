@@ -1,0 +1,17 @@
+extends ../layouts/common
+
+block content
+    form(action='' method="POST")
+        if errors
+            each error in errors
+                .alert.alert-danger= error
+        .form-group
+            label(for='email') Email address:
+            input#email.form-control(type='text' placeholder='Enter email' name="email" value= values ? values.email : "")
+        .form-group
+            label(for='pwd') Password:
+            input#password.form-control(type='password' placeholder='Enter password' name="password" value= values ? values.password : "")
+        
+        button.btn.btn-primary(type='submit') Submit
+
+    
